@@ -5,3 +5,13 @@
     gap: 1rem;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
