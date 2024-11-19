@@ -11,6 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "paths": {
+      "ngx-mat-split-button": [
+        "./dist/ngx-mat-split-button"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
