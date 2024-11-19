@@ -1,24 +1,49 @@
-# NgxMatSplitButton
+# ngx-mat-split-button
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+A split button component for Angular Material.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ngx-mat-split-button` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-mat-split-button`.
-> Note: Don't forget to add `--project ngx-mat-split-button` or else it will be added to the default project in your `angular.json` file. 
+```bash
+npm i --save @feature23/ngx-mat-split-button
+```
 
-## Build
+## Usage
 
-Run `ng build ngx-mat-split-button` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import `NgxMatSplitButton` and `NgxMatSplitButtonPrimaryAction` into either your standalone component's `imports` array, or the module in which it will be used.
 
-## Publishing
+You likely will also need to import `MatMenuItem` from `@angular/material/menu`, if you want to use the attached menu as intended.
 
-After building your library with `ng build ngx-mat-split-button`, go to the dist folder `cd dist/ngx-mat-split-button` and run `npm publish`.
+Example:
+```html
+<ngx-mat-split-button color="primary" buttonStyle="raised" (primaryClick)="primaryClick()">
+    <ng-template ngx-mat-split-primary-action>
+        Primary action
+    </ng-template>
+    <button mat-menu-item (click)="secondaryClick()">Item 1</button>
+    <button mat-menu-item (click)="secondaryClick()">Item 2</button>
+    <button mat-menu-item (click)="secondaryClick()">Item 3</button>
+</ngx-mat-split-button>
+```
 
-## Running unit tests
+The `ng-template` with the `ngx-mat-split-primary-action` directive is required to provide the inner content for the primary action button (the button to the left of the dropdown arrow).
+Anything else inside the `ngx-mat-split-button` component will be rendered in the dropdown menu, which internally is just a `mat-menu` with `xPosition="before"`.
 
-Run `ng test ngx-mat-split-button` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Inputs
 
-## Further help
+The `ngx-mat-split-button` component has the following inputs to customize its appearance and behavior:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Input | Type | Description |
+| --- | --- | --- |
+| `color` | `'primary' \| 'accent' \| 'warn' \| undefined` | (Optional; default `undefined`) The color of the primary action button. (Material 2 themes only.) |
+| `buttonStyle` | `'raised' \| 'stroked' \| 'flat' \| 'basic'` | (Optional; default `'basic'`) The style of the primary action button. These map to the equivalent [Angular Material Button directives](https://material.angular.io/components/button/overview), with `raised` being slightly different in the DOM than the others due to needing a unified shadow. (`raised` style uses `mat-flat-button` internally with a `box-shadow`.) |
+
+## Events
+
+The following output events are available to support interactivity:
+
+| Output | Event/Argument Type | Description |
+| --- | --- | --- |
+| `primaryClick` | `MouseEvent` | Emitted when the primary action button is clicked. |
+
+To handle clicks on the secondary action buttons, you can simply add `(click)="handler()"` to the buttons you provide inside the `ngx-mat-split-button` component.

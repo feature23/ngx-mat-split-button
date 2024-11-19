@@ -18,7 +18,7 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
     // NOTE: the repetitive code here is required because it doesn't appear that you can conditionally add directives like `mat-button` vs `mat-flat-button`.
     template: `
     @if (buttonStyle() === 'basic') {
-        <button mat-button [color]="color()" (click)="primaryClick.emit()"
+        <button mat-button [color]="color()" (click)="primaryClick.emit($event)"
             class="ngx-mat-split-button-primary ngx-mat-split-button-basic">
             <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
         </button>
@@ -29,7 +29,7 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
         </button>
     } @else if (buttonStyle() === 'raised') {
         <div class="ngx-mat-split-button-raised-wrapper">
-            <button mat-flat-button [color]="color()" (click)="primaryClick.emit()"
+            <button mat-flat-button [color]="color()" (click)="primaryClick.emit($event)"
                 class="ngx-mat-split-button-primary ngx-mat-split-button-raised">
                 <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
             </button>
@@ -40,7 +40,7 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
             </button>
         </div>
     } @else if (buttonStyle() === 'stroked') {
-        <button mat-stroked-button [color]="color()" (click)="primaryClick.emit()"
+        <button mat-stroked-button [color]="color()" (click)="primaryClick.emit($event)"
             class="ngx-mat-split-button-primary ngx-mat-split-button-stroked">
             <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
         </button>
@@ -50,7 +50,7 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
             <mat-icon svgIcon="ngx-mat-split-arrow-down-icon" aria-label="Down arrow icon" />
         </button>
     } @else if (buttonStyle() === 'flat') {
-        <button mat-flat-button [color]="color()" (click)="primaryClick.emit()"
+        <button mat-flat-button [color]="color()" (click)="primaryClick.emit($event)"
             class="ngx-mat-split-button-primary ngx-mat-split-button-flat">
             <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
         </button>
@@ -98,7 +98,7 @@ export class NgxMatSplitButton {
     readonly color = input<string>();
     readonly buttonStyle = input<'basic' | 'raised' | 'stroked' | 'flat'>('basic');
 
-    readonly primaryClick = output();
+    readonly primaryClick = output<MouseEvent>();
 
     readonly primaryAction = contentChild.required(NgxMatSplitPrimaryAction);
 
