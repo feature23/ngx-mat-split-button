@@ -19,44 +19,56 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
     template: `
     @if (buttonStyle() === 'basic') {
         <button mat-button [color]="color()" (click)="primaryClick.emit($event)"
-            class="ngx-mat-split-button-primary ngx-mat-split-button-basic">
+            class="ngx-mat-split-button-primary ngx-mat-split-button-basic"
+            [disabled]="primaryDisabled()">
             <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
         </button>
         <button mat-button [color]="color()" [matMenuTriggerFor]="menu"
             class="ngx-mat-split-button-trigger"
-            aria-label="Toggle dropdown">
+            aria-label="Toggle menu"
+            [disabled]="menuTriggerDisabled()"
+            (click)="menuTriggerClick.emit($event)">
             <mat-icon svgIcon="ngx-mat-split-arrow-down-icon" aria-label="Down arrow icon" />
         </button>
     } @else if (buttonStyle() === 'raised') {
         <div class="ngx-mat-split-button-raised-wrapper">
             <button mat-flat-button [color]="color()" (click)="primaryClick.emit($event)"
-                class="ngx-mat-split-button-primary ngx-mat-split-button-raised">
+                class="ngx-mat-split-button-primary ngx-mat-split-button-raised"
+                [disabled]="primaryDisabled()">
                 <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
             </button>
             <button mat-flat-button [color]="color()" [matMenuTriggerFor]="menu"
                 class="ngx-mat-split-button-trigger"
-                aria-label="Toggle dropdown">
+                aria-label="Toggle menu"
+                [disabled]="menuTriggerDisabled()"
+                (click)="menuTriggerClick.emit($event)">
                 <mat-icon svgIcon="ngx-mat-split-arrow-down-icon" aria-label="Down arrow icon" />
             </button>
         </div>
     } @else if (buttonStyle() === 'stroked') {
         <button mat-stroked-button [color]="color()" (click)="primaryClick.emit($event)"
-            class="ngx-mat-split-button-primary ngx-mat-split-button-stroked">
+            class="ngx-mat-split-button-primary ngx-mat-split-button-stroked"
+            [disabled]="primaryDisabled()">
             <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
         </button>
         <button mat-stroked-button [color]="color()" [matMenuTriggerFor]="menu"
             class="ngx-mat-split-button-trigger"
-            aria-label="Toggle dropdown">
+            aria-label="Toggle menu"
+            [disabled]="menuTriggerDisabled()"
+            (click)="menuTriggerClick.emit($event)">
             <mat-icon svgIcon="ngx-mat-split-arrow-down-icon" aria-label="Down arrow icon" />
         </button>
     } @else if (buttonStyle() === 'flat') {
         <button mat-flat-button [color]="color()" (click)="primaryClick.emit($event)"
-            class="ngx-mat-split-button-primary ngx-mat-split-button-flat">
+            class="ngx-mat-split-button-primary ngx-mat-split-button-flat"
+            [disabled]="primaryDisabled()">
             <ng-container [ngTemplateOutlet]="primaryAction().templateRef" />
         </button>
         <button mat-flat-button [color]="color()" [matMenuTriggerFor]="menu"
             class="ngx-mat-split-button-trigger"
-            aria-label="Toggle dropdown">
+            aria-label="Toggle menu"
+            [disabled]="menuTriggerDisabled()"
+            (click)="menuTriggerClick.emit($event)">
             <mat-icon svgIcon="ngx-mat-split-arrow-down-icon" aria-label="Down arrow icon" />
         </button>
     }
@@ -97,8 +109,11 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
 export class NgxMatSplitButton {
     readonly color = input<string>();
     readonly buttonStyle = input<'basic' | 'raised' | 'stroked' | 'flat'>('basic');
+    readonly primaryDisabled = input<boolean>();
+    readonly menuTriggerDisabled = input<boolean>();
 
     readonly primaryClick = output<MouseEvent>();
+    readonly menuTriggerClick = output<MouseEvent>();
 
     readonly primaryAction = contentChild.required(NgxMatSplitPrimaryAction);
 

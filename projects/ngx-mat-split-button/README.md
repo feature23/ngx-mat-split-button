@@ -37,6 +37,8 @@ The `ngx-mat-split-button` component has the following inputs to customize its a
 | --- | --- | --- |
 | `color` | `'primary' \| 'accent' \| 'warn' \| undefined` | (Optional; default `undefined`) The color of the primary action button. (Material 2 themes only.) |
 | `buttonStyle` | `'raised' \| 'stroked' \| 'flat' \| 'basic'` | (Optional; default `'basic'`) The style of the primary action button. These map to the equivalent [Angular Material Button directives](https://material.angular.io/components/button/overview), with `raised` being slightly different in the DOM than the others due to needing a unified shadow. (`raised` style uses `mat-flat-button` internally with a `box-shadow`.) |
+| `primaryDisabled` | `boolean` | (Optional; default `false`) Whether the primary action button should be disabled. |
+| `menuTriggerDisabled` | `boolean` | (Optional; default `false`) Whether the dropdown menu trigger button should be disabled. |
 
 ## Events
 
@@ -45,5 +47,6 @@ The following output events are available to support interactivity:
 | Output | Event/Argument Type | Description |
 | --- | --- | --- |
 | `primaryClick` | `MouseEvent` | Emitted when the primary action button is clicked. |
+| `menuTriggerClick` | `MouseEvent` | Emitted when the dropdown menu trigger button is clicked. |
 
 To handle clicks on the secondary action buttons, you can simply add `(click)="handler()"` to the buttons you provide inside the `ngx-mat-split-button` component.
