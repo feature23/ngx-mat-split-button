@@ -1,5 +1,7 @@
 # ngx-mat-split-button
 
+[![CI Build](https://github.com/feature23/ngx-mat-split-button/actions/workflows/node.js.yml/badge.svg)](https://github.com/feature23/ngx-mat-split-button/actions/workflows/node.js.yml)
+
 A split button component for Angular Material.
 Split buttons (also known as "split button dropdowns" in Bootstrap) have a primary action button with a conjoined dropdown toggle that opens a menu for secondary actions.
 
