@@ -77,6 +77,9 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
     </mat-menu>
   `,
     styles: `
+    :host {
+        display: inline-flex;
+    }
     .ngx-mat-split-button-primary {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
@@ -95,7 +98,7 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
         }
     }
     .ngx-mat-split-button-raised-wrapper {
-        display: inline-block;
+        display: inline-flex;
         border-radius: var(--mdc-filled-button-container-shape, var(--mat-app-corner-full));
         box-shadow: var(--mdc-protected-button-container-elevation-shadow, var(--mat-app-level1));
     }
