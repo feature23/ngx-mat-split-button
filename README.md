@@ -24,3 +24,11 @@ There are two demo projects to verify compatibility with both Material 2 and Mat
 
 - **Material 3 demo**: `ng serve ngx-mat-split-button-demo` — uses M3 theming with `mat.theme()` and `--mat-sys-*` design tokens.
 - **Material 2 demo**: `ng serve ngx-mat-split-button-demo-m2` — uses M2 theming with `mat.m2-define-light-theme()` and classic palettes (indigo/pink/red).
+
+## Angular Version Compatibility
+
+| ngx-mat-split-button version | Angular version |
+| --- | --- |
+| v0.2.0 | v18 |
+| v0.3.0 | v19 |
+| v0.4.0 | v20 |

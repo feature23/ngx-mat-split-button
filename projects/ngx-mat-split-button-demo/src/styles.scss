@@ -40,7 +40,7 @@ body {
     background-color: var(--mat-sys-surface);
 
     &:hover > .mat-mdc-button-persistent-ripple::before {
-        opacity: var(--mat-protected-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
+        opacity: var(--mat-button-protected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));
     }
 
     &.mat-primary {
