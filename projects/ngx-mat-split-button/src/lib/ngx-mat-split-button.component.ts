@@ -104,25 +104,25 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
         min-width: 3rem;
 
         mat-icon {
-            --mat-text-button-icon-spacing: 0;
-            --mat-filled-button-icon-spacing: 0;
-            --mat-protected-button-icon-spacing: 0;
-            --mat-outlined-button-icon-spacing: 0;
+            --mat-button-text-icon-spacing: 0;
+            --mat-button-filled-icon-spacing: 0;
+            --mat-button-protected-icon-spacing: 0;
+            --mat-button-outlined-icon-spacing: 0;
         }
     }
     .ngx-mat-split-button-raised-wrapper {
         display: inline-flex;
-        border-radius: var(--mat-sys-corner-full, var(--mdc-filled-button-container-shape, var(--mat-app-corner-full)));
-        box-shadow: var(--mat-sys-level1, var(--mdc-protected-button-container-elevation-shadow, var(--mat-app-level1)));
+        border-radius: var(--mat-sys-corner-full, var(--mat-button-filled-container-shape, var(--mat-app-corner-full)));
+        box-shadow: var(--mat-sys-level1, var(--mat-button-protected-container-elevation-shadow, var(--mat-app-level1)));
         transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
         &:hover {
-            box-shadow: var(--mat-sys-level2, var(--mdc-protected-button-container-elevation-shadow, var(--mat-app-level2)));
+            box-shadow: var(--mat-sys-level2, var(--mat-button-protected-container-elevation-shadow, var(--mat-app-level2)));
         }
     }
     .ngx-mat-split-button-flat {
         mat-icon svg {
-            fill: var(--mdc-filled-button-label-text-color, var(--mat-app-on-primary));
+            fill: var(--mat-button-filled-label-text-color, var(--mat-app-on-primary));
         }
     }
     `
