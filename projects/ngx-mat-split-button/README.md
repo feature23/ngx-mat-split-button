@@ -35,7 +35,7 @@ The `ngx-mat-split-button` component has the following inputs to customize its a
 
 | Input | Type | Description |
 | --- | --- | --- |
-| `color` | `'primary' \| 'accent' \| 'warn' \| undefined` | (Optional; default `undefined`) The color of the primary action button. (Material 2 themes only.) |
+| `color` | `string \| undefined` | (Optional; default `undefined`) The color of the button. For Material 2 themes: `'primary'`, `'accent'`, or `'warn'`. For Material 3 themes: `'primary'`, `'secondary'`, or `'tertiary'`. |
 | `buttonStyle` | `'raised' \| 'stroked' \| 'flat' \| 'basic'` | (Optional; default `'basic'`) The style of the primary action button. These map to the equivalent [Angular Material Button directives](https://material.angular.io/components/button/overview), with `raised` being slightly different in the DOM than the others due to needing a unified shadow. (`raised` style uses `mat-flat-button` internally with a `box-shadow`.) |
 | `primaryDisabled` | `boolean` | (Optional; default `false`) Whether the primary action button should be disabled. |
 | `menuTriggerDisabled` | `boolean` | (Optional; default `false`) Whether the dropdown menu trigger button should be disabled. |

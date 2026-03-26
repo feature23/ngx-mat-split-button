@@ -13,7 +13,7 @@ import { MatMenuItem } from '@angular/material/menu';
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-    title = 'ngx-mat-split-button demo (M3)';
+    title = 'ngx-mat-split-button demo (M2)';
 
     primaryClick() {
         alert('Primary action clicked');

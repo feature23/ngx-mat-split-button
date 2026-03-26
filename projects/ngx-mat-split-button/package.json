@@ -1,6 +1,6 @@
 {
   "name": "@feature23/ngx-mat-split-button",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "private": false,
   "repository": {
@@ -8,12 +8,9 @@
     "url": "git+https://github.com/feature23/ngx-mat-split-button.git"
   },
   "peerDependencies": {
-    "@angular/common": "^18.2.0",
-    "@angular/core": "^18.2.0",
-    "@angular/material": "^18.2.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/material": "^19.2.0"
   },
   "sideEffects": false
 }
