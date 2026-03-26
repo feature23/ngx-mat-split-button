@@ -8,7 +8,6 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
 
 @Component({
     selector: 'ngx-mat-split-button',
-    standalone: true,
     imports: [
         CommonModule,
         MatButton,
@@ -79,6 +78,20 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
     styles: `
     :host {
         display: inline-flex;
+
+        &:not(:disabled) {
+            &.mat-primary {
+                color: var(--mat-sys-primary);
+            }
+
+            &.mat-secondary {
+                color: var(--mat-sys-secondary);
+            }
+
+            &.mat-tertiary {
+                color: var(--mat-sys-tertiary);
+            }
+        }
     }
     .ngx-mat-split-button-primary {
         border-top-right-radius: 0;
@@ -99,8 +112,13 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
     }
     .ngx-mat-split-button-raised-wrapper {
         display: inline-flex;
-        border-radius: var(--mdc-filled-button-container-shape, var(--mat-app-corner-full));
-        box-shadow: var(--mdc-protected-button-container-elevation-shadow, var(--mat-app-level1));
+        border-radius: var(--mat-sys-corner-full, var(--mdc-filled-button-container-shape, var(--mat-app-corner-full)));
+        box-shadow: var(--mat-sys-level1, var(--mdc-protected-button-container-elevation-shadow, var(--mat-app-level1)));
+        transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+            box-shadow: var(--mat-sys-level2, var(--mdc-protected-button-container-elevation-shadow, var(--mat-app-level2)));
+        }
     }
     .ngx-mat-split-button-flat {
         mat-icon svg {

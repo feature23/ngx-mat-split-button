@@ -4,7 +4,6 @@ import { MatMenuItem } from '@angular/material/menu';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
     imports: [
         NgxMatSplitButton,
         NgxMatSplitPrimaryAction,
