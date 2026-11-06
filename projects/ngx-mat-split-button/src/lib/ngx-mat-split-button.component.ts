@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, contentChild, inject, input, output } from '@angular/core';
+import { Component, contentChild, inject, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -75,6 +75,7 @@ import { NgxMatSplitPrimaryAction } from './ngx-mat-split-primary-action.directi
         <ng-content />
     </mat-menu>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: `
     :host {
         display: inline-flex;
