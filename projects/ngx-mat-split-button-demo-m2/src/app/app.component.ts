@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NgxMatSplitButton, NgxMatSplitPrimaryAction } from '../../../ngx-mat-split-button/src/public-api';
 import { MatMenuItem } from '@angular/material/menu';
 
@@ -10,6 +10,7 @@ import { MatMenuItem } from '@angular/material/menu';
         MatMenuItem,
     ],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.scss'
 })
 export class AppComponent {

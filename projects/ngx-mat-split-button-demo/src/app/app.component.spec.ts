@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ngx-mat-split-button-demo' title`, () => {
+  it(`should have the 'ngx-mat-split-button demo (M3)' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-mat-split-button-demo');
+    expect(app.title).toEqual('ngx-mat-split-button demo (M3)');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ngx-mat-split-button-demo');
+    expect(compiled.querySelector('h1')?.textContent).toContain('ngx-mat-split-button demo (M3)');
   });
 });
